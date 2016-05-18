@@ -10,7 +10,7 @@ This implementation has a similar interface to Python's 1D `numpy.ndarray`
 but stores the values and indices in linked lists to preserve memory.
 
 `sparse_vector` is for numerical data only, if you want any type of data, have
-a look at [`sparse_list`](https://pypi.python.org/pypi/sparse_list), the parent
+a look at [sparse_list](https://pypi.python.org/pypi/sparse_list), the parent
 library, a dictionary-of-keys implementation of a sparse list in python.
 
 If you need 2D matrices, have a look at `scipy.sparse`, they also have a

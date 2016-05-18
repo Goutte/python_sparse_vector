@@ -3,6 +3,7 @@
 
 numpy
 benchmark
+pypandoc
 coverage
 future
 nose

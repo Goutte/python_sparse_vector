@@ -1,10 +1,25 @@
 from distutils.core import setup
 import os
 
-version = '0.1'
+# python setup.py sdist upload
+
+version = '0.4'
 github_url = 'https://github.com/Goutte/python_sparse_vector'
 paj = 'Goutte'
 paj_email = 'antoine@goutenoir.com'
+
+# Pypi does not support markdown (the cheeseshop strikes again)
+long_description = ''
+try:
+    import pypandoc
+    long_description = pypandoc.convert('README.md', 'rst')
+    long_description = long_description.replace("\r", "")
+except (ImportError, OSError):
+    print("Pandoc not found. Long description conversion failure.")
+    import io
+    with io.open('README.md', encoding="utf-8") as f:
+        long_description = f.read()
+
 
 setup(
     name='sparse_vector',
@@ -35,9 +50,7 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Utilities",
     ],
-    long_description=(''.join(
-        [open(f).read() for f in ('README.md',) if os.path.isfile(f)]
-    )),
+    long_description=long_description,
     # install_requires('future', 'six'),
     license='MIT'
 )
