@@ -1,0 +1,9 @@
+# Install these requirements with
+# pip install -r requirements.txt
+
+numpy
+benchmark
+coverage
+future
+nose
+six

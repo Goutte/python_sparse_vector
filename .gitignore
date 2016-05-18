@@ -1,0 +1,11 @@
+# Python
+MANIFEST
+build/
+dist/
+**/*.pyc
+
+# KDE
+.directory
+
+# Jetbrains
+.idea
