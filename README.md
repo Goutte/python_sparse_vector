@@ -3,9 +3,6 @@ Sparse Vector
 
 Available on [https://pypi.python.org/pypi/sparse_vector].
 
-Inspired by [`sparse_list`](https://pypi.python.org/pypi/sparse_vector),
-a dictionary-of-keys implementation of a sparse list in python.
-
 A _sparse vector_ is a 1D numerical list where most (say, more than 95% of)
 values will be `0` (or some other default) and for reasons of memory efficiency
 you don't wish to store these.
@@ -14,8 +11,9 @@ you don't wish to store these.
 This implementation has a similar interface to Python's 1D `numpy.ndarray`
 but stores the values and indices in linked lists to preserve memory.
 
-sparse_vector is for numerical data, if you want any type of data, have a look
-at [`sparse_list`](https://pypi.python.org/pypi/sparse_list)
+`sparse_vector` is for numerical data only, if you want any type of data, have
+a look at [`sparse_list`](https://pypi.python.org/pypi/sparse_list), the parent
+library, a dictionary-of-keys implementation of a sparse list in python.
 
 If you need 2D matrices, have a look at `scipy.sparse`, they also have a
 linked lists implementation, `lil_matrix`.
