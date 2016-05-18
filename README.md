@@ -1,8 +1,6 @@
 Sparse Vector
 =============
 
-Available on [https://pypi.python.org/pypi/sparse_vector].
-
 A _sparse vector_ is a 1D numerical list where most (say, more than 95% of)
 values will be `0` (or some other default) and for reasons of memory efficiency
 you don't wish to store these.
@@ -21,6 +19,8 @@ linked lists implementation, `lil_matrix`.
 
 Installation
 ------------
+
+Available on [the cheeseshop](https://pypi.python.org/pypi/sparse_vector).
 
 Installation is simply:
 
