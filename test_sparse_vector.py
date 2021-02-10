@@ -109,54 +109,54 @@ class TestSparseVector(unittest.TestCase):
 
     def test_access_with_negative_index(self):
         sv = SparseVector([0, 1, 2, 4])
-        self.assertEquals(4, sv[-1])
+        self.assertEqual(4, sv[-1])
 
     def test_access_with_negative_index_with_no_value(self):
         sv = SparseVector(5, 0)
-        self.assertEquals(0, sv[-1])
+        self.assertEqual(0, sv[-1])
 
     def test_slice(self):
         sv = SparseVector([0, 1, 2, 4], 10)
-        self.assertEquals([1, 2], sv[1:3])
+        self.assertEqual([1, 2], sv[1:3])
 
     def test_extended_slice(self):
         sv = SparseVector([0, 1, 2, 3, 4, 5, 6, ])
-        self.assertEquals([1, 3, 5], sv[1:6:2])
+        self.assertEqual([1, 3, 5], sv[1:6:2])
 
     def test_extended_slice_with_negative_stop(self):
         sv = SparseVector([0, 1, 2, 3, 4, 5, 6, ])
-        self.assertEquals([1, 3, 5], sv[1:-1:2])
+        self.assertEqual([1, 3, 5], sv[1:-1:2])
 
     def test_slice_reversal_full(self):
         sv = SparseVector([1, 2, 3])
-        self.assertEquals([3, 2, 1], sv[::-1])
+        self.assertEqual([3, 2, 1], sv[::-1])
 
     def test_slice_reversal_empty(self):
         sv = SparseVector(4)
-        self.assertEquals([0, 0, 0, 0], sv[::-1])
+        self.assertEqual([0, 0, 0, 0], sv[::-1])
 
     def test_slice_with_list_read(self):
         sv = SparseVector([1, 2, 3, 4, 5])
         ip = [0, 2, 4]
-        self.assertEquals([1, 3, 5], sv[ip])
+        self.assertEqual([1, 3, 5], sv[ip])
 
     def test_slice_with_list_write(self):
         sv = SparseVector([1, 2, 3, 4, 5])
         ip = [0, 2, 4]
         sv[ip] = [6, 7, 8]
-        self.assertEquals([6, 2, 7, 4, 8], list(sv))
-        self.assertEquals([6, 2, 7, 4, 8], sv)
+        self.assertEqual([6, 2, 7, 4, 8], list(sv))
+        self.assertEqual([6, 2, 7, 4, 8], sv)
         numpy.testing.assert_array_almost_equal([6, 2, 7, 4, 8], sv)
 
     def test_slice_with_list_write_2(self):
         sv = SparseVector(([1, 2, 4, 5], [1, 2, 3, 4]))
         ip = [0, 3, 2, 4]
         sv[ip] = [6, 7, 9, 8]
-        self.assertEquals([6, 1, 9, 7, 8, 4], list(sv))
+        self.assertEqual([6, 1, 9, 7, 8, 4], list(sv))
 
     def test_reversed(self):
         sv = SparseVector([1, 2, 3])
-        self.assertEquals([3, 2, 1], list(reversed(sv)))
+        self.assertEqual([3, 2, 1], list(reversed(sv)))
 
     def test_sorted(self):
         sv = SparseVector({0: 1, 4: 1}, 0)

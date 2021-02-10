@@ -144,8 +144,8 @@ class SparseVector(object):
         return self
 
     def __initialise_from_dict(self, arg):
-        self.values = np.array(arg.values(), dtype=self.dtype)
-        self.indices = np.array(arg.keys(), dtype=np.int)
+        self.values = np.array(list(arg.values()), dtype=self.dtype)
+        self.indices = np.array(list(arg.keys()), dtype=np.int)
         self.size = np.max(self.indices) + 1
 
     def __initialise_from_tuple(self, arg):
